@@ -20,4 +20,4 @@ function ListItem({title}: ListItemProps) {
   )
 }
 
-export default ListItem
+export { ListItem }
