@@ -1,3 +1,4 @@
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useQuery } from "@tanstack/react-query";
 import { ChangeEventHandler, useState } from "react";
 import "./App.css";
@@ -36,10 +37,22 @@ function App() {
     setNewProductName("");
   };
 
+  const handleDelete = () => {
+    console.log("Delete");
+  }
+
   return (
     <div className="App">
       <div className="list-wrapper">
-        <div className="list-header">Shopping List {newProductName}</div>
+        <div className="list-header">
+          <div className="header-left" />
+          <div className="header-title">
+            Shopping List
+          </div>
+          <div className="header-icon">
+            <DeleteIcon onClick={handleDelete} />
+          </div>
+        </div>
 
         {isPending ? (
           <div className="products-list">Loading ...</div>
