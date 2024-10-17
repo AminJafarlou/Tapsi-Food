@@ -1,3 +1,58 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444444;
+}
+
+.list-wrapper {
+  width: 360px;
+  height: 90%;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.list-header {
+  height: 60px;
+  width: 360px;
+  background-color: #555555;
+
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-list {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.list-actions {
+  width: 360px;
+  height: 120px;
+  background-color: #555555;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+  margin-block-start: 8px;
+}
+
+.new-product-input {
+  width: 100%;
+  height: 48px;
+  margin-block-end: 8px;
+}
+
+.add-button {
+  width: 100%;
+  height: 48px;
 }

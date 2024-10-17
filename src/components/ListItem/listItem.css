@@ -1,0 +1,28 @@
+.product-item {
+    height: 60px;
+    background-color: #555555;
+
+    border-radius: 4px;
+    padding-inline: 8px;
+    margin-block-end: 8px;
+    border: 1px solid #f5f5f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.product-name {
+    flex: 1;
+    color: white;
+    text-align: center;
+}
+
+.product-checkbox {}
