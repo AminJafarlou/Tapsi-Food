@@ -21,7 +21,6 @@ function ListItem({
     <div className="product-item">
       <div className="product-img">
         <LazyLoadImage
-          alt={title}
           width={42}
           height={42}
           src={imageSrc}
