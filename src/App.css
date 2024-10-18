@@ -8,8 +8,8 @@
 }
 
 .list-wrapper {
-  width: 360px;
   height: 750px;
+  width: min(100%, 360px);
   background-color: black;
 
   display: flex;
