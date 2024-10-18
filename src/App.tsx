@@ -55,13 +55,14 @@ function App() {
                 id={item.id}
                 key={item.id}
                 title={item.title}
+                imageSrc={item.base64Image || ''}
                 handleOnChange={toggleItemInDeleteList}
                 isSelected={readyToDeleteIds.includes(item.id)}
               />
             );
           })}
         </div>
-        
+
         <div className="list-actions">
           <input
             type="text"
