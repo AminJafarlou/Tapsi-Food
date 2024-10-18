@@ -1,71 +1,67 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useQuery } from "@tanstack/react-query";
 import { ChangeEventHandler, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
+import { ProductItem, products } from "./assets/products";
 import { ListItem } from "./components/ListItem";
 
-interface ProductItem {
-  id: string;
-  price: number;
-  title: string;
-  description: string;
-  strikePrice: number;
-  base64Image: string;
-}
-
 function App() {
-  const { isPending, error, data } = useQuery({
-    queryKey: ["productList"],
-    queryFn: () =>
-      fetch("https://shopping-list-ten-kohl.vercel.app/products.json").then(
-        (res) => res.json()
-      ),
-  });
-
   const [newProductName, setNewProductName] = useState<string>("");
-  const [listOfItems, setListOfItems] = useState<Array<ProductItem>>(
-    data?.products || []
-  );
+  const [listOfItems, setListOfItems] = useState<Array<ProductItem>>(products);
+  const [readyToDeleteIds, setReadyToDeleteIds] = useState<Array<string>>([]);
 
   const handleOnChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setNewProductName(e.target.value);
   };
 
   const handleAddToList = () => {
-    // @ts-ignore
-    setListOfItems((prev) => [...prev, newProductName]);
+    setListOfItems((prev) => [
+      ...prev,
+      { id: uuidv4(), title: newProductName },
+    ]);
     setNewProductName("");
   };
 
-  const handleDelete = () => {
-    console.log("Delete");
+  const toggleItemInDeleteList = (id: string) => {
+    if (!readyToDeleteIds.includes(id)) {
+      setReadyToDeleteIds((prev) => [...prev, id])
+    } else {
+      const newList = readyToDeleteIds.filter(itemId => itemId !== id)
+      setReadyToDeleteIds(newList)
+    }
   }
+
+  const handleDelete = () => {
+    const newList = listOfItems.filter(item => !readyToDeleteIds.includes(item.id))
+    setListOfItems(newList)
+    setReadyToDeleteIds([])
+  };
 
   return (
     <div className="App">
       <div className="list-wrapper">
         <div className="list-header">
           <div className="header-left" />
-          <div className="header-title">
-            Shopping List
-          </div>
+          <div className="header-title">Shopping List</div>
           <div className="header-icon">
             <DeleteIcon onClick={handleDelete} />
           </div>
         </div>
 
-        {isPending ? (
-          <div className="products-list">Loading ...</div>
-        ) : error ? (
-          <div className="products-list">Error</div>
-        ) : (
-          <div className="products-list">
-            {(data?.products || []).map((item: ProductItem) => {
-              return <ListItem key={item.id} title={item.title} />;
-            })}
-          </div>
-        )}
-
+        <div className="products-list">
+          {listOfItems.map((item: ProductItem) => {
+            return (
+              <ListItem
+                id={item.id}
+                key={item.id}
+                title={item.title}
+                handleOnChange={toggleItemInDeleteList}
+                isSelected={readyToDeleteIds.includes(item.id)}
+              />
+            );
+          })}
+        </div>
+        
         <div className="list-actions">
           <input
             type="text"

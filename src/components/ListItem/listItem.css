@@ -26,4 +26,7 @@
     text-align: center;
 }
 
-.product-checkbox {}
+.product-checkbox .checkbox {
+    width: 20px;
+    height: 20px;
+}
