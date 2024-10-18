@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AminJafarlou/Tapsi-Food/static/css/main.bfbb86fe.css",
+    "main.js": "/AminJafarlou/Tapsi-Food/static/js/main.c3f081da.js",
+    "static/media/fallback.png": "/AminJafarlou/Tapsi-Food/static/media/fallback.5061315794e55ffecf9f.png",
+    "index.html": "/AminJafarlou/Tapsi-Food/index.html",
+    "main.bfbb86fe.css.map": "/AminJafarlou/Tapsi-Food/static/css/main.bfbb86fe.css.map",
+    "main.c3f081da.js.map": "/AminJafarlou/Tapsi-Food/static/js/main.c3f081da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfbb86fe.css",
+    "static/js/main.c3f081da.js"
+  ]
+}
