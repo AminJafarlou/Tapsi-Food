@@ -8,7 +8,7 @@
 }
 
 .list-wrapper {
-  height: 750px;
+  height: min(100%, 750px);
   width: min(100%, 360px);
   background-color: black;
 
