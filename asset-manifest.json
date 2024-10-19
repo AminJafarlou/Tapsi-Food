@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Tapsi-Food/static/css/main.bfbb86fe.css",
-    "main.js": "/Tapsi-Food/static/js/main.15dfab1e.js",
+    "main.js": "/Tapsi-Food/static/js/main.abcc7c2f.js",
     "static/media/fallback.png": "/Tapsi-Food/static/media/fallback.5061315794e55ffecf9f.png",
     "index.html": "/Tapsi-Food/index.html",
     "main.bfbb86fe.css.map": "/Tapsi-Food/static/css/main.bfbb86fe.css.map",
-    "main.15dfab1e.js.map": "/Tapsi-Food/static/js/main.15dfab1e.js.map"
+    "main.abcc7c2f.js.map": "/Tapsi-Food/static/js/main.abcc7c2f.js.map"
   },
   "entrypoints": [
     "static/css/main.bfbb86fe.css",
-    "static/js/main.15dfab1e.js"
+    "static/js/main.abcc7c2f.js"
   ]
 }
