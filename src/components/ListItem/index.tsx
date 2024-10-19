@@ -20,14 +20,18 @@ function ListItem({
   return (
     <div className="product-item">
       <div className="product-img">
-        <LazyLoadImage
-          width={42}
-          height={42}
-          src={imageSrc}
-          effect="blur"
-          placeholderSrc={Fallback}
-          useIntersectionObserver
-        />
+        {imageSrc ? (
+          <LazyLoadImage
+            width={42}
+            height={42}
+            src={imageSrc}
+            effect="blur"
+            placeholderSrc={Fallback}
+            useIntersectionObserver
+          />
+        ) : (
+          <img width={42} height={42} src={Fallback} alt={title} />
+        )}
       </div>
       <div className="product-name">{title}</div>
       <div className="product-checkbox">
